@@ -64,36 +64,61 @@
 //    return 0;
 //}
 
-int main() {
-    int i, j;
-    int k = 0;
-    for (i = 100; i < 1000; i++) {
-        for (j = 2; j < sqrt(i); j++)
-        {
-            if (i % j == 0) 
-                break;
-            }
-            if(j >= sqrt(i)){
-                k += 1;
-            }  
-    }
-    printf("%d", k);
-    return 0;
+// int main() {
+    // int i, j;
+    // int k = 0;
+    // for (i = 100; i < 1000; i++) {
+        // for (j = 2; j < sqrt(i); j++)
+        // {
+            // if (i % j == 0) 
+                // break;
+            // }
+            // if(j >= sqrt(i)){
+                // k += 1;
+            // }  
+    // }
+    // printf("%d", k);
+    // return 0;
+// }
+// int main() {
+    // int i, j;
+    // int k = 0;
+    // for (i = 100; i < 1000; i++) {
+        // for (j = 2; j < sqrt(i); j++)
+        // {
+            // if (i % j == 0)
+                // break;
+        // }
+        // if (j >= sqrt(i))
+        // {
+            // k += 1;
+        // }
+    // }
+    // printf("%d", k);
+    // return 0;
+// }
+
+long long Fib(n) {
+	long long f1 = 1;
+	long long f2 = 1;
+	long long f3 = 0;
+	if (n <= 0) {
+		return -1;
+	}
+	if (n == 1 || n == 2) {
+		return 1;
+	}
+	for (int i = 3; i <= n; i++) {
+		f3 = f1 + f2;
+		f1 = f2;
+		f2 = f3;
+	}
+	return f3;
 }
 int main() {
-    int i, j;
-    int k = 0;
-    for (i = 100; i < 1000; i++) {
-        for (j = 2; j < sqrt(i); j++)
-        {
-            if (i % j == 0)
-                break;
-        }
-        if (j >= sqrt(i))
-        {
-            k += 1;
-        }
-    }
-    printf("%d", k);
-    return 0;
+	int n;
+	scanf("%d", &n);
+	long long ret = Fib(n);
+	printf("%lld", ret);
+	return 0;
 }
